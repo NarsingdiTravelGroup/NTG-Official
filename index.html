@@ -29,25 +29,24 @@
 
         .container { max-width: 1200px; margin: auto; padding: 0 20px; }
 
-        .map-container { padding: 40px 0; text-align: center; }
-        iframe { width: 100%; max-width: 1000px; height: 400px; border-radius: 20px; border: 2px solid var(--primary); box-shadow: 0 0 20px rgba(46, 204, 113, 0.2); }
+        /* দর্শনীয় স্থান গ্রিড */
+        .places-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 20px 0; }
+        .place-card { background: var(--card-bg); border-radius: 15px; overflow: hidden; border: 1px solid #333; transition: 0.3s; height: 100%; }
+        .place-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .place-card img { width: 100%; height: 200px; object-fit: cover; }
+        .place-info { padding: 20px; }
+        .place-info h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.4rem; }
+        .place-info p { font-size: 0.95rem; color: #ccc; }
 
+        /* টিম গ্রিড */
         .team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; padding: 20px 0; }
-        
-        .profile-card { background: var(--card-bg); border-radius: 15px; padding: 20px; text-align: center; border: 1px solid #333; transition: 0.4s; position: relative; overflow: hidden; }
-        .profile-card:hover { transform: translateY(-10px); border-color: var(--primary); box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+        .profile-card { background: var(--card-bg); border-radius: 15px; padding: 20px; text-align: center; border: 1px solid #333; transition: 0.4s; }
+        .profile-card:hover { transform: translateY(-10px); border-color: var(--primary); }
         .profile-card img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 3px solid var(--primary); margin-bottom: 15px; }
-        .profile-card h3 { font-size: 1.1rem; margin-bottom: 10px; color: var(--light); }
-        .fb-btn { display: inline-block; background: #1877F2; color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 0.8rem; transition: 0.3s; }
-        .fb-btn:hover { background: #145dbf; }
+        .fb-btn { display: inline-block; background: #1877F2; color: white; padding: 6px 15px; border-radius: 20px; text-decoration: none; font-size: 0.8rem; }
         .role-badge { font-size: 0.7rem; background: var(--primary); color: black; padding: 2px 10px; border-radius: 10px; font-weight: bold; margin-bottom: 10px; display: inline-block; }
 
-        .social-links { text-align: center; padding: 40px 0; background: #111; margin-top: 50px; }
-        .social-links a { color: white; font-size: 1.5rem; margin: 0 15px; transition: 0.3s; text-decoration: none; }
-        .social-links a:hover { color: var(--primary); }
-
-        footer { text-align: center; padding: 30px; background: #000; border-top: 1px solid #222; }
-        footer p { font-size: 1rem; color: #aaa; }
+        footer { text-align: center; padding: 30px; background: #000; border-top: 1px solid #222; margin-top: 50px; }
         .heart { color: #e74c3c; }
 
         @media (max-width: 768px) {
@@ -68,10 +67,44 @@
 </section>
 
 <div class="container">
-    <section class="map-container">
-        <h3 class="section-title">ডিজিটাল ট্রাভেল ম্যাপ, এখানে পাবেন নরসিংদির সব দর্শনীয় স্থান এর লোকেশন একসাথে </h3>
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d233667.8223908687!2d90.39706208671875!3d23.95158!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755b0a373418859%3A0x8673756858e11a1a!2sNarsingdi%20District!5e0!3m2!1sen!2sbd!4v1714578000000!5m2!1sen!2sbd" allowfullscreen="" loading="lazy"></iframe>
-    </section>
+    <h2 class="section-title">দর্শনীয় স্থান</h2>
+    <div class="places-grid">
+        <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1596422846543-75c6fc18a593?auto=format&fit=crop&w=800&q=80" alt="উয়ারী-বটেশ্বর">
+            <div class="place-info">
+                <h3>উয়ারী-বটেশ্বর</h3>
+                <p>বেলাবো ও শিবপুর উপজেলায় অবস্থিত এই প্রত্নতাত্ত্বিক স্থানটি প্রায় ২৫০০ বছরের প্রাচীন নগর সভ্যতার নিদর্শন বহন করে।</p>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1590077428593-a55bb07c4665?auto=format&fit=crop&w=800&q=80" alt="ড্রিম হলিডে পার্ক">
+            <div class="place-info">
+                <h3>ড্রিম হলিডে পার্ক</h3>
+                <p>নরসিংদীর সাহেপ্রতাপে অবস্থিত আধুনিক সুযোগ-সুবিধা সম্বলিত একটি বিনোদন পার্ক, যা পারিবারিক ভ্রমণের জন্য আদর্শ।</p>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1516496636080-14fb876e029d?auto=format&fit=crop&w=800&q=80" alt="লক্ষণ সাহার জমিদার বাড়ি">
+            <div class="place-info">
+                <h3>লক্ষণ সাহার জমিদার বাড়ি</h3>
+                <p>পলাশ উপজেলায় অবস্থিত এই প্রাচীন জমিদার বাড়িটি তার অসাধারণ স্থাপত্যশৈলী এবং কারুকাজের জন্য পর্যটকদের আকর্ষণ করে।</p>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=800&q=80" alt="বেলাবোর নীলকুঠি">
+            <div class="place-info">
+                <h3>বেলাবোর নীলকুঠি</h3>
+                <p>ব্রিটিশ আমলের ইতিহাসের সাক্ষী হয়ে দাঁড়িয়ে থাকা এই নীলকুঠিটি প্রাচীন শাসনের স্মৃতিচিহ্ন বহন করে।</p>
+            </div>
+        </div>
+        <div class="place-card">
+            <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80" alt="মেঘনা রিভার ভিউ">
+            <div class="place-info">
+                <h3>মেঘনা রিভার ভিউ</h3>
+                <p>নদীর পাড়ে বসে সূর্যাস্ত দেখার জন্য এটি একটি চমৎকার জায়গা। শান্ত পরিবেশ ও নদীর শীতল হাওয়া উপভোগ করার সেরা স্থান।</p>
+            </div>
+        </div>
+    </div>
 
     <h2 class="section-title">Admin Panel</h2>
     <div class="team-grid">
@@ -79,122 +112,113 @@
             <span class="role-badge">Admin</span>
             <img src="https://i.ibb.co.com/01F9cMj/image.jpg" alt="Zonayed Zihad">
             <h3>Zonayed Zihad</h3>
-            <a href="https://www.facebook.com/zonayed.zihad.14" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/zonayed.zihad.14" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge">Admin</span>
             <img src="https://i.ibb.co.com/5WC0nbh8/image.jpg" alt="Rokib Hasan">
             <h3>Rokib Hasan</h3>
-            <a href="https://www.facebook.com/rokib.hasan.526875" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/rokib.hasan.526875" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge">Admin</span>
             <img src="https://i.ibb.co.com/F4hcyXzt/image.jpg" alt="Biplob Hossain">
             <h3>Biplob Hossain</h3>
-            <a href="https://www.facebook.com/profile.php?id=100057588373855" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=100057588373855" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge">Admin</span>
             <img src="https://i.ibb.co.com/8DfvpVrH/image.jpg" alt="Robin Mia">
             <h3>Robin Mia</h3>
-            <a href="https://www.facebook.com/dkrobin.robin.90" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/dkrobin.robin.90" target="_blank" class="fb-btn">Facebook</a>
         </div>
     </div>
 
     <h2 class="section-title">Moderators</h2>
     <div class="team-grid">
-        <div class="profile-card" style="border-color: var(--accent);">
-            <span class="role-badge" style="background: var(--accent);"> Moderator</span>
+        <div class="profile-card">
+            <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/WNj2Jc6d/image.jpg" alt="Sahriar Antim">
             <h3>Sahriar Antim</h3>
-            <a href="https://www.facebook.com/sahriarantim" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/sahriarantim" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/21nX1trz/image.jpg" alt="Juraida Esha">
             <h3>Juraida Esha</h3>
-            <a href="https://www.facebook.com/juraida.islam.esha.2024" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/juraida.islam.esha.2024" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/qLHCBngD/image.jpg" alt="Hafsa Afrin">
             <h3>Hafsa Afrin</h3>
-            <a href="https://www.facebook.com/nituislam.islam.75" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/nituislam.islam.75" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/23NWkFZT/image.jpg" alt="Siam Hasan">
             <h3>Siam Hasan</h3>
-            <a href="https://www.facebook.com/seyam.hasan.15" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/seyam.hasan.15" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/sJ65xDhD/image.jpg" alt="MD Arman">
             <h3>MD Arman</h3>
-            <a href="https://www.facebook.com/md.arman.858886" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/md.arman.858886" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/hRbzVNsd/image.jpg" alt="Tamim Hasan">
             <h3>Tamim Hasan</h3>
-            <a href="https://www.facebook.com/tamim.hasan.962944" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/tamim.hasan.962944" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/3YWr9bT4/image.jpg" alt="Ashraful Islam">
             <h3>Ashraful Islam</h3>
-            <a href="https://www.facebook.com/Ashrafhm123FB-" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/Ashrafhm123FB-" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/gbyfyV34/image.jpg" alt="MH Rifat">
             <h3>MH Rifat</h3>
-            <a href="https://www.facebook.com/mh.rifat.794290" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/mh.rifat.794290" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/3mhSG5Np/image.jpg" alt="Tamim Ahmed">
             <h3>Tamim Ahmed</h3>
-            <a href="https://www.facebook.com/diamond.sailar.9" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/diamond.sailar.9" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/xtKF1vy3/image.jpg" alt="Riyon Mridha">
             <h3>Riyon Mridha</h3>
-            <a href="https://www.facebook.com/riyon.mridha.2025" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/riyon.mridha.2025" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/99tfMkkt/image.jpg" alt="Mazharul Islam">
             <h3>Mazharul Islam</h3>
-            <a href="https://www.facebook.com/mazharul.islam.869103" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/mazharul.islam.869103" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/F4qcdDhh/image.jpg" alt="MD Junayed Hasan">
             <h3>MD Junayed Hasan</h3>
-            <a href="https://www.facebook.com/profile.php?id=100095033183872" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/profile.php?id=100095033183872" target="_blank" class="fb-btn">Facebook</a>
         </div>
         <div class="profile-card">
             <span class="role-badge" style="background: var(--accent);">Moderator</span>
             <img src="https://i.ibb.co.com/YF3C93bN/image.jpg" alt="MD Siam khan">
             <h3>MD Siam khan</h3>
-            <a href="https://www.facebook.com/md.siam.khan.647791" target="_blank" class="fb-btn"><i class="fab fa-facebook"></i> Facebook</a>
+            <a href="https://www.facebook.com/md.siam.khan.647791" target="_blank" class="fb-btn">Facebook</a>
         </div>
     </div>
 </div>
 
-<section class="social-links">
-    <h3>আমাদের সাথে যুক্ত হন</h3>
-    <div style="margin-top: 20px;">
-        <a href="https://facebook.com/groups/611167520645566/" target="_blank"><i class="fab fa-facebook-square"></i> Group</a>
-        <a href="https://www.facebook.com/profile.php?id=61565699111134" target="_blank"><i class="fab fa-facebook"></i> Page</a>
-    </div>
-</section>
-
 <footer>
-    <p>©️ <span class="heart">❤️</span> Sahriar Antim 2026</p>
-    <p style="font-size: 0.7rem; margin-top: 5px;">All Rights Reserved</p>
+    <p>Copyright <span class="heart">❤️</span> Sahriar Antim 2026</p>
 </footer>
 
 </body>
